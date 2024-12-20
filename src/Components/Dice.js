@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Dice({key, value, isHeld, id , holdDice}) {
+export default function Dice({key, value, isHeld, holdDice}) {
     const style = {
         backgroundColor: isHeld ? "#626F47" : null
     }

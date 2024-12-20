@@ -1,4 +1,4 @@
-import { React, useState, useEffect} from 'react';
+import { React, useState} from 'react';
 import { nanoid } from 'nanoid';
 import './App.css';
 import Header from "./Components/Header";
@@ -30,17 +30,26 @@ function App() {
       holdDice={() => holdDice(die.id)}
     />))
 function rollDice() {
-  setRollCount(prev => prev + 1);
-  setRecord(prev => prev + 1);
-  setDice(prev => prev.map(item => item.isHeld ? item : {...item, value: Math.ceil(Math.random() * 6)}));
+  if (checkForWin) {
+    setDice(generateAllNewDice());
+    setRollCount(0);
+  } else {
+    setRollCount(prev => prev + 1);
+    if (record === rollCount) {
+      setRecord(prev => prev + 1)}
+    setDice(prev => prev.map(item => item.isHeld ? item : {...item, value: Math.ceil(Math.random() * 6)}));
+  }
 }
+
+const checkForWin = dice.every(item => item.isHeld && item.value === dice[0].value);
 
   return (
     <>
       <Header />
       <div className="dice-container">{diceElements}</div>
+      {checkForWin && <h1>You Win!</h1>}
       <div className="footer-container">
-                <button onClick={rollDice}>Roll Dice</button>
+                <button onClick={rollDice}>{checkForWin ? "New Game" : "Roll"}</button>
             </div>
             <div className="roll-count-container">
                 <p>Roll Count: {rollCount}</p>
