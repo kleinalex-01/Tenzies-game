@@ -24,9 +24,7 @@ export const Dies: React.FC = () => {
     <div >
       <div className={styles.diceContainer}>
         {dice.map((die) => (
-          <button
-            key={die.idx}
-            className={`${styles.diceButton}`}>
+          <button onClick={() => setDice(dice)} key={die.idx} className={`${styles.diceButton}`}>
             {die.number}
           </button>
         ))}
