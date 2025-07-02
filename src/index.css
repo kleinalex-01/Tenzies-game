@@ -4,4 +4,19 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Fredoka", "Inter", "Roboto Condensed", "Rubik Bubbles", sans-serif;
+  --bg-color: #f0f4f8;
+  --dark-bg-color: #1a1a1a;
+  --text-color: #333;
+  --button-color: #4a90e2;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+}
+
+[data-bs-theme="dark"] {
+  --bg-color: #1a1a1a;
+  --dark-bg-color: #f0f4f8;
+  --text-color: #e0e0e0;
+  --button-color: #4a90e2;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
 }
