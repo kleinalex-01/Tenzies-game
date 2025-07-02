@@ -8,8 +8,11 @@
   --dark-bg-color: #1a1a1a;
   --text-color: #333;
   --button-color: #4a90e2;
+  --button-hover-color: #357abd;
   --success-color: #28a745;
   --danger-color: #dc3545;
+  --dice-background-color: #ffffff;
+  --dice-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 [data-bs-theme="dark"] {
@@ -17,6 +20,9 @@
   --dark-bg-color: #f0f4f8;
   --text-color: #e0e0e0;
   --button-color: #4a90e2;
+  --button-hover-color: #357abd;
   --success-color: #28a745;
   --danger-color: #dc3545;
+  --dice-background-color: #333;
+  --dice-box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }

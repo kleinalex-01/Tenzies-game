@@ -1,3 +1,14 @@
+.themeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+  border-radius: 1rem;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+}
+
 .appContainer {
   background-color: var(--dark-bg-color);
   display: flex;
@@ -13,4 +24,21 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.25), 0 0 40px rgba(0, 0, 0, 0.15);
   height: 30rem;
   width: 25rem;
+}
+.rollButton {
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.rollButton:hover {
+  background-color: var(--button-hover-color);
+  scale: 1.05;
+}
+.rollButton:active {
+  scale: 0.95;
 }
