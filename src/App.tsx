@@ -2,12 +2,15 @@ import React from 'react';
 import './App.css';
 import { useTheme } from './Context/ThemeContext';
 import { useDice } from './Context/diceContext';
+import { useGameStatus } from './Context/GameStatusContext';
 import { Dies } from './Components/Dies';
+import Confetti from 'react-confetti';
 
 export const App: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
   const { rollDice } = useDice();
-
+  const { isWon } = useGameStatus();
+  
   return (
     <>
     <button onClick={toggleTheme} className='themeButton'>
@@ -15,6 +18,7 @@ export const App: React.FC = () => {
     </button>
 
     <div className='appContainer'>
+      {isWon && <Confetti/>}
       <div className='gameContainer p-5'>
         <div className='d-flex flex-column justify-content-between align-items-center'>
           <h1 className='text-center'>Tenzies Game</h1>
@@ -22,7 +26,7 @@ export const App: React.FC = () => {
         </div>
         <div className='diceContainer'>
           <div className='dice mt-4'>
-            <Dies />
+            <Dies/>
           </div>
         </div>
         <div className='d-flex justify-content-center align-items-center mt-4'>

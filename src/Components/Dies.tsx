@@ -1,11 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from "./Dies.module.css";
 import { useDice } from '../Context/diceContext';
 import type { Die } from '../Context/diceContext';
+import { useGameStatus } from '../Context/GameStatusContext';
 
 export const Dies: React.FC = () => {
   const { dice, setDice } = useDice();
+  const { setIsWon } = useGameStatus();
   const [targetNumber, setTargetNumber] = useState<number | undefined>(undefined);
+
+  useEffect(() => {
+    if(dice.every(die => die.isCorrect)) {
+      setIsWon(true);
+
+      setTimeout(() => {
+        setTargetNumber(undefined);
+        setIsWon(false);
+        setDice(Array.from({ length: 10 }, (_, i) => ({
+          idx: i,
+          number: Math.floor(Math.random() * 9) + 1,
+          isClicked: false,
+          isCorrect: false,
+          isFalse: false,
+        })));
+      }, 10000);
+    }
+  }, [dice, setDice, setIsWon]);
 
   const handleDieClick = (die: Die, idx: number) => {
     const isFirstClick = targetNumber === undefined;

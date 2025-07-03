@@ -8,4 +8,8 @@
 
 # Log 3 (2025.07.03.)
 
-  Game logic complete. Dice turns green and blocks pointer events when matches with the initial color. If its false it turns red to indicate error, but it goes away on re-roll. Only thing remaining is to handle victory. 
+  Game logic complete. Dice turns green and blocks pointer events when matches with the initial color. If its false it turns red to indicate error, but it goes away on re-roll. Only thing remaining is to handle victory.
+
+# Log 4 (2025.07.03)
+
+  Project Finished. Added context to track game status. When the user wins the game, confetti indicates the victory for 10 seconds, the game resets after.

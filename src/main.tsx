@@ -4,13 +4,16 @@ import './index.css'
 import { App } from './App.tsx'
 import { ThemeProvider } from './Context/ThemeContext.tsx'
 import { DiceProvider } from './Context/diceContext.tsx'
+import { GameStatusProvider } from './Context/GameStatusContext.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <ThemeProvider>
     <DiceProvider>
-      <StrictMode>
-        <App />
-      </StrictMode>
+      <GameStatusProvider>
+        <StrictMode>
+          <App />
+        </StrictMode>
+      </GameStatusProvider>
     </DiceProvider>
   </ThemeProvider>
 )
