@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.css';
 import { useTheme } from './Context/ThemeContext';
+import { useDice } from './Context/diceContext';
 import { Dies } from './Components/Dies';
 
 export const App: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
+  const { rollDice } = useDice();
 
   return (
     <>
@@ -19,13 +21,12 @@ export const App: React.FC = () => {
           <p className='text-center'>Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
         </div>
         <div className='diceContainer'>
-          {/* Dice components will be rendered here */}
           <div className='dice mt-4'>
             <Dies />
           </div>
         </div>
         <div className='d-flex justify-content-center align-items-center mt-4'>
-          <button className='rollButton'>Roll</button>
+          <button onClick={rollDice} className='rollButton'>Roll</button>
         </div>
       </div>
     </div>

@@ -5,3 +5,7 @@
 # Log 2 (2025.07.02.)
 
   UI completed. Themes are set, Die buttons are well placed. 
+
+# Log 3 (2025.07.03.)
+
+  Game logic complete. Dice turns green and blocks pointer events when matches with the initial color. If its false it turns red to indicate error, but it goes away on re-roll. Only thing remaining is to handle victory. 
